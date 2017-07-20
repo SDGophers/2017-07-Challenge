@@ -3,6 +3,9 @@
 *.dll
 *.so
 *.dylib
+main
+2017-07-Challenge*
+
 
 # Test binary, build with `go test -c`
 *.test
