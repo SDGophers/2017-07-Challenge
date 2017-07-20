@@ -8,7 +8,9 @@ Use Go profiling tools to improve performance of a simple web service app that p
 
 ## Sample Data
 
-The data file is included in the `data` directory. It has been broken down into some smaller files for development and testing. If you want to use a larger data file, download and uncompress the orignal `lastfm-dataset-360K.tar.gz` to access the full data set (see below).
+Sample data is from last.fm in the form of artist play counts by user.  The data is in tab separated format (tsv).
+
+The data is included in the `data` directory. It has been broken down into some smaller files for development and testing. If you want to use a larger data file, download and uncompress the orignal `lastfm-dataset-360K.tar.gz` to access the full data set (see below).
 
 To pull out <n> number of records, for example 1,000,000, from within the `data` directory (where it is assumed the tar.gz file resides and has been uncompressed):
 
@@ -57,9 +59,9 @@ Special thanks to [William Kennedy](https://www.ardanlabs.com/) for providing su
 
 ### Tracing
 
-* [Tracing](https://github.com/ardanlabs/gotraining/tree/f5a66e4f7a153e4b4f73dd264b8d86835e45efd9/topics/go/profiling/trace)
+* [Example](https://github.com/ardanlabs/gotraining/tree/f5a66e4f7a153e4b4f73dd264b8d86835e45efd9/topics/go/profiling/trace)
 
-1. Uncomment the block between `/*` and `*/ at the top of `main()`
+1. Uncomment the block between `/*` and `*/` at the top of `main()`
 2. Rebuild: `go build main.go`
 3. View output: `go tool pprof ./main http://localhost:4000/debug/pprof/profile` (will open web browser)
 4. View trace
