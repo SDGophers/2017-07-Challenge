@@ -22,7 +22,8 @@ This dataset contains <user, artist, plays> tuples collected from Last.fm API us
 
 Data file:
 
-* http://mtg.upf.edu/static/datasets/last.fm/lastfm-dataset-360K.tar.gz
+* http://mtg.upf.edu/static/datasets/last.fm/lastfm-dataset-360K.tar.gz (original)
+* https://u78367877.dl.dropboxusercontent.com/u/78367877/lastfm-dataset-360K.tar.gz (alternate)
 
 ## Resoureces
 
