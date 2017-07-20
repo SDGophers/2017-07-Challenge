@@ -71,11 +71,13 @@ Special thanks to [William Kennedy](https://www.ardanlabs.com/) for providing su
 
 This is what we can demonstrate.
 
-* Make it more efficient
-* Introduce "problems" that will make it slower; observe results
-* Add new functionality
+* Make it more efficient; demonstrate with profiling data
+* Introduce "problems" that will make it slower; observe results - basically demonstrate what makes Go inefficient
+   * Is allocating on the stack more efficient than allocating on the heap?
+   * What data structures are most efficient?
+* Add new functionality, including but not limited to:
    * Sort results by artist, listens, number of users
-   * User demographics (will need to parse `usersha1-profile.tsv` in the data tar.gz file)
-   * New requests; top <n>, etc.
-* Profile initial new functionality, improve and compare new profile
+   * User demographics (will need to parse `usersha1-profile.tsv` in the data tar.gz file) - this would be pretty interesting
+   * New requests, for instance: Top N artist, Top N users (with demographics), Bottom N artists ("the long tail"), etc.
+* Profile initial new functionality, optimize and compare new profile data
 
