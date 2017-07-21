@@ -8,7 +8,9 @@ Use Go profiling tools to improve performance of a simple web service app that p
 
 ## Sample Data
 
-The data file is included in the `data` directory. It has been broken down into some smaller files for development and testing. If you want to use a larger data file, download and uncompress the orignal `lastfm-dataset-360K.tar.gz` to access the full data set (see below).
+Sample data is from last.fm in the form of artist play counts by user.  The data is in tab separated format (tsv).
+
+The data is included in the `data` directory. It has been broken down into some smaller files for development and testing. If you want to use a larger data file, download and uncompress the orignal `lastfm-dataset-360K.tar.gz` to access the full data set (see below).
 
 To pull out <n> number of records, for example 1,000,000, from within the `data` directory (where it is assumed the tar.gz file resides and has been uncompressed):
 
@@ -57,7 +59,7 @@ Special thanks to [William Kennedy](https://www.ardanlabs.com/) for providing su
 
 ### Tracing
 
-* [Tracing](https://github.com/ardanlabs/gotraining/tree/f5a66e4f7a153e4b4f73dd264b8d86835e45efd9/topics/go/profiling/trace)
+* [Example](https://github.com/ardanlabs/gotraining/tree/f5a66e4f7a153e4b4f73dd264b8d86835e45efd9/topics/go/profiling/trace)
 
 1. Uncomment the block between `/*` and `*/ at the top of `main()`
 2. Disable the `http.ListenAndServe(...)`
@@ -71,11 +73,13 @@ Special thanks to [William Kennedy](https://www.ardanlabs.com/) for providing su
 
 This is what we can demonstrate.
 
-* Make it more efficient
-* Introduce "problems" that will make it slower; observe results
-* Add new functionality
+* Make it more efficient; demonstrate with profiling data
+* Introduce "problems" that will make it slower; observe results - basically demonstrate what makes Go inefficient
+   * Is allocating on the stack more efficient than allocating on the heap?
+   * What data structures are most efficient?
+* Add new functionality, including but not limited to:
    * Sort results by artist, listens, number of users
-   * User demographics (will need to parse `usersha1-profile.tsv` in the data tar.gz file)
-   * New requests; top <n>, etc.
-* Profile initial new functionality, improve and compare new profile
+   * User demographics (will need to parse `usersha1-profile.tsv` in the data tar.gz file) - this would be pretty interesting
+   * New requests, for instance: Top N artist, Top N users (with demographics), Bottom N artists ("the long tail"), etc.
+* Profile initial new functionality, optimize and compare new profile data
 
