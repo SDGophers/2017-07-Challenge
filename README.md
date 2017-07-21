@@ -60,10 +60,12 @@ Special thanks to [William Kennedy](https://www.ardanlabs.com/) for providing su
 * [Tracing](https://github.com/ardanlabs/gotraining/tree/f5a66e4f7a153e4b4f73dd264b8d86835e45efd9/topics/go/profiling/trace)
 
 1. Uncomment the block between `/*` and `*/ at the top of `main()`
-2. Rebuild: `go build main.go`
-3. View output: `go tool pprof ./main http://localhost:4000/debug/pprof/profile` (will open web browser)
-4. View trace
-5. Things to note: heap allocations, garbage collection (GC), timing of goroutines
+2. Disable the `http.ListenAndServe(...)`
+3. Rebuild: `go build main.go`
+4. Run it: `./main` - you should see a trace.out file created
+5. View the output: `go tool trace trace.out`
+6. Click 'View trace'
+7. Things to note: heap allocations, garbage collection (GC), timing of goroutines
 
 ### Challenges
 
