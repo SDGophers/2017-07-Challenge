@@ -53,6 +53,7 @@ Special thanks to [William Kennedy](https://www.ardanlabs.com/) for providing su
 
 1. Uncomment the `http.ListenAndServe(...)` line at the bottom of `main.go` (and the `Printf` statement if you are a stickler for details.
 2. Generate a load on the server using some kind of web loading tool (`hey`, `ab`, `seige`, etc.)
+  * `hey -m GET -c 1 -n 500000 "http://localhost:4000/getone"`
 3. Raw http/pprof: `http://localhost:4000/debug/pprof`
 4. Looking at Heap Profiles: `http://localhost:4000/debug/pprof/heap?debug=1`
 5. CPU Profiling: `go tool pprof ./pprof http://localhost:4000/debug/pprof/profile`
